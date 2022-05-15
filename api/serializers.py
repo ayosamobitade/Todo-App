@@ -1,12 +1,12 @@
 from rest_framework import serializers
 from todo.models import Todo
 
-class TodoSerializer(serializers.ModelSerialzer):
+class TodoSerializer(serializers.ModelSerializer):
     created = serializers.ReadOnlyField()
     complete = serializers.ReadOnlyField()
 
     class Meta:
         model = Todo
-        fields = ['id', 'title', 'created', 'completed', 'slug']
+        fields = ['id', 'title', 'created', 'complete', 'slug']
 
         
