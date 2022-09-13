@@ -37,3 +37,7 @@ class TodoToggleComplete(generics.UpdateAPIView):
         user = self.request.user
         return Todo.objects.filter(user=user)
 
+    def perform_update(self.serializer):
+        serializer.instance.completed = not(serializer.instance.completed)
+        serializer.save()
+
