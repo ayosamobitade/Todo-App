@@ -26,5 +26,6 @@ class TodoRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
 
     def get_query(self):
         user = self.request.user
+        # user can only delete own post
         return Todo.objects.filter(user = user)
 
