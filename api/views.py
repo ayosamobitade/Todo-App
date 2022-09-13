@@ -2,9 +2,9 @@ from django.shortcuts import render
 
 # Create your views here.
 from rest_framework.generics import ListCreateAPIView
-from .serializers import TodoSerializer, TodocompleteSerializer
+from .serializers import TodoSerializer, TodoToggleCompleteSerializer
 from todo.models import Todo
-from rest_framework import permissions
+from rest_framework import generics, permissions
 
 
 
