@@ -29,3 +29,11 @@ class TodoRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
         # user can only delete own post
         return Todo.objects.filter(user = user)
 
+class TodoToggleComplete(generics.UpdateAPIView):
+    serializer_class = TodoToggleCompleteSerializer
+    permission_class = [permisions.IsAuthenticated]
+
+    def get_queryset(self):
+        user = self.request.user
+        return Todo.objects.filter(user=user)
+
