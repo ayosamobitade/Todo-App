@@ -31,7 +31,7 @@ class TodoRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
 
 class TodoToggleComplete(generics.UpdateAPIView):
     serializer_class = TodoToggleCompleteSerializer
-    permission_class = [permisions.IsAuthenticated]
+    permission_class = [permissions.IsAuthenticated]
 
     def get_queryset(self):
         user = self.request.user
