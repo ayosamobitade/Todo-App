@@ -20,7 +20,7 @@ class  TodoList(ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(user = self.request.user)
 
-class TodoRetrieveUpdateDestroy(RetrieveUpdateDestroyAPIView):
+class TodoRetrieveUpdateDestroy(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = TodoSerializer
     permissions = [permissions.IsAuthenticated]
 
