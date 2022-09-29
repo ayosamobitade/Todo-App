@@ -10,7 +10,7 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = ['id', 'title', 'memo', 'created', 'complete', 'slug']
 
         
-class TodoToggleCompleteSerialzer(serializers.ModelSerializer):
+class TodoToggleCompleteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Todo
         fields = ['id'] # why need to show id?
